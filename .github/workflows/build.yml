@@ -5,7 +5,7 @@ on:
   workflow_dispatch: {}
   push:
     branches:
-      - 'master'
+      - 'jwilson.1216.release'
     tags-ignore:
       - '**'
 
@@ -121,7 +121,7 @@ jobs:
 
   publish:
     runs-on: macos-13
-    if: github.repository == 'square/okio' && github.ref == 'refs/heads/master'
+    if: github.repository == 'square/okio'
     needs: [jvm, all-platforms, emulator]
 
     steps:
@@ -144,7 +144,7 @@ jobs:
 
   publish-website:
     runs-on: ubuntu-latest
-    if: github.repository == 'square/okio' && github.ref == 'refs/heads/master'
+    if: github.repository == 'square/okio'
     needs: [jvm, all-platforms, emulator]
 
     steps:
